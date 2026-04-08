@@ -45,10 +45,5 @@ export function useTodos() {
     setTodos(prev => prev.filter(t => t.id !== id))
   }
 
-  return {
-    todos,
-    addTodo,
-    toggleTodo,
-    deleteTodo,
-  }
+  return { todos, addTodo, toggleTodo, deleteTodo }
 }

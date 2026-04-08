@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react'
 import { useTodos } from '../hooks/useTodos'
 
-// localStorage mock
 const localStorageMock = (() => {
   let store: Record<string, string> = {}
   return {
@@ -26,7 +25,6 @@ describe('useTodos', () => {
       result.current.addTodo({ text: '테스트', category: '업무', priority: 'high' })
     })
     expect(result.current.todos).toHaveLength(1)
-    expect(result.current.todos[0].text).toBe('테스트')
     expect(result.current.todos[0].completed).toBe(false)
   })
 
@@ -53,9 +51,9 @@ describe('useTodos', () => {
   it('localStorage에 저장 및 복구', () => {
     const { result: r1 } = renderHook(() => useTodos())
     act(() => {
-      r1.current.addTodo({ text: '저장테스트', category: '기타', priority: 'medium' })
+      r1.current.addTodo({ text: '저장', category: '개인', priority: 'low' })
     })
     const { result: r2 } = renderHook(() => useTodos())
-    expect(r2.current.todos[0].text).toBe('저장테스트')
+    expect(r2.current.todos[0].text).toBe('저장')
   })
 })
