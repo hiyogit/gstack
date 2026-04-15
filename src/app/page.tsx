@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-slate-900 p-6">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-2xl font-bold text-slate-100 mb-6">📋 Todo App</h1>
+        <h1 className="text-2xl font-bold text-slate-100 mb-6">📋 Todo App 01</h1>
         
         <div className="flex gap-2 mb-6">
           <input
